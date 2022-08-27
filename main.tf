@@ -7,6 +7,6 @@ terraform {
 moved {
 
   # Rename of repository
-  from = github_branch_protection.root["tfrepo-test"]
-  to   = github_branch_protection.root["tfroot-test"]
+  from = github_repository.root["tfrepo-test"]
+  to   = github_repository.root["tfroot-test"]
 }
