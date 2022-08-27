@@ -4,11 +4,11 @@ variable "resource_repository" {
   type        = map(any)
   default = {
     root = [
-      "tfrepo-test"
+      "tfroot-test"
     ]
 
     module = [
-      ""
+      "tfmodule-test"
     ]
 
     submodule = [
@@ -21,7 +21,8 @@ variable "repository_description" {
   description = "The repository description"
   type        = map(any)
   default = {
-    "tfrepo-test" = "Test description"
+    "tfroot-test"   = "Test root description"
+    "tfmodule-test" = "Test module description"
   }
 }
 
@@ -29,7 +30,8 @@ variable "repository_visibility" {
   description = "The visibility of the repository"
   type        = map(any)
   default = {
-    "tfrepo-test" = "public"
+    "tfroot-test"   = "public"
+    "tfmodule-test" = "public"
   }
 }
 
