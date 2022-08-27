@@ -10,10 +10,16 @@ import input as tfplan
 blast_radius := 20
 
 # weights assigned for each operation on each resource-type
-weights := {"github_repository": {"delete": 100, "create": 10, "modify": 1}}
+weights := {
+	"github_repository": {"delete": 100, "create": 10, "modify": 1},
+	"github_branch_protection": {"delete": 100, "create": 5, "modify": 1},
+}
 
 # Consider exactly these resource types in calculations
-resource_types := {"github_repository"}
+resource_types := {
+	"github_repository",
+	"github_branch_protection",
+}
 
 #########
 # Policy
