@@ -1,5 +1,5 @@
 # Define resources
-resource "github_repository" "module" {
+/* resource "github_repository" "module" {
   for_each    = toset(var.resource_repository.module)
   name        = each.value
   description = var.repository_description[each.value]
@@ -37,3 +37,4 @@ resource "github_branch_protection" "module" {
     required_approving_review_count = 0
   }
 }
+ */
