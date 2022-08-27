@@ -13,7 +13,7 @@ resource "github_repository" "root" {
 
   template {
     owner      = var.repository_template_owner
-    repository = var.repository_template[each.value]
+    repository = var.repository_template.root
   }
 }
 
