@@ -4,11 +4,11 @@ variable "resource_repository" {
   type        = map(any)
   default = {
     root = [
-      "tfroot-test"
+      "tfroot-directory_services"
     ]
 
     module = [
-      "tfmodule-test"
+      ""
     ]
 
     submodule = [
@@ -21,8 +21,7 @@ variable "repository_description" {
   description = "The repository description"
   type        = map(any)
   default = {
-    "tfroot-test"   = "Test root description"
-    "tfmodule-test" = "Test module description"
+    "tfroot-directory_services" = "Terraform root configuration for deploying Directory Services to Azure, using modules, with Terratest Unit/Integration testing via Go, Regula (OPA) Policy as Code scanning in an Azure DevOps Pipeline"
   }
 }
 
@@ -30,8 +29,7 @@ variable "repository_visibility" {
   description = "The visibility of the repository"
   type        = map(any)
   default = {
-    "tfroot-test"   = "public"
-    "tfmodule-test" = "public"
+    "tfroot-directory_services" = "public"
   }
 }
 
