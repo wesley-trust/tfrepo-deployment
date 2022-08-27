@@ -1,25 +1,25 @@
 # Define resources
-resource "github_repository" "module" {
-  for_each    = toset(var.resource_repository.module)
+resource "github_repository" "submodule" {
+  for_each    = toset(var.resource_repository.submodule)
   name        = each.value
   description = var.repository_description[each.value]
 
   visibility       = var.repository_visibility[each.value]
   license_template = var.license_template
-  topics           = var.repository_topics.module
+  topics           = var.repository_topics.submodule
 
   delete_branch_on_merge = true
   vulnerability_alerts   = true
 
   template {
     owner      = var.repository_template_owner
-    repository = var.repository_template.module
+    repository = var.repository_template.submodule
   }
 }
 
-resource "github_branch_protection" "module" {
-  for_each      = toset(var.resource_repository.module)
-  repository_id = github_repository.module[each.value].node_id
+resource "github_branch_protection" "submodule" {
+  for_each      = toset(var.resource_repository.submodule)
+  repository_id = github_repository.submodule[each.value].node_id
 
   pattern = var.repository_branch_protection
 
