@@ -4,6 +4,7 @@ variables:
 - group: 'terraform-backend'
 - group: 'terraform-system'
 - group: 'terraform-global'
+- group: 'terraform-github'
 
 # Specify backend container from the service (which must be lowercase)
 - name: 'backendAzureRmContainerName'
