@@ -1,0 +1,12 @@
+stages:
+- stage: Validate
+  condition: or(eq(variables['Build.SourceBranch'], 'refs/heads/main'), startswith(variables['Build.SourceBranch'], 'refs/heads/release/'))
+  pool:
+    vmImage: 'ubuntu-latest'
+  jobs:
+  
+  # Validate Jobs
+  - template: ../Jobs/validate.yml
+
+  # Workspace Job
+  - template: ../Jobs/workspace.yml
