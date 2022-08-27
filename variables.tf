@@ -4,7 +4,10 @@ variable "resource_repository" {
   type        = map(any)
   default = {
     root = [
-      "tfroot-directory_services"
+      "tfroot-directory_services",
+      "tfroot-edge_services",
+      "tfroot-file_services",
+      "tfroot-management_services",
     ]
 
     module = [
@@ -21,7 +24,10 @@ variable "repository_description" {
   description = "The repository description"
   type        = map(any)
   default = {
-    "tfroot-directory_services" = "Terraform root configuration for deploying Directory Services to Azure, using modules, with Terratest Unit/Integration testing via Go, Regula (OPA) Policy as Code scanning in an Azure DevOps Pipeline"
+    "tfroot-directory_services"  = "Terraform root configuration for deploying Directory Services to Azure, using modules, with Terratest Unit/Integration testing via Go, Regula (OPA) Policy as Code scanning in an Azure DevOps Pipeline"
+    "tfroot-edge_services"       = "Terraform root configuration for deploying Edge Services to Azure, using modules, with Terratest Unit/Integration testing via Go, Regula (OPA) Policy as Code scanning in an Azure DevOps Pipeline"
+    "tfroot-file_services"       = "Terraform root configuration for deploying File Services to Azure, using modules, with Terratest Unit/Integration testing via Go, Regula (OPA) Policy as Code scanning in an Azure DevOps Pipeline"
+    "tfroot-management_services" = "Terraform root configuration for deploying Management Services to Azure, using modules, with Terratest Unit/Integration testing via Go, Regula (OPA) Policy as Code scanning in an Azure DevOps Pipeline"
   }
 }
 
@@ -29,7 +35,10 @@ variable "repository_visibility" {
   description = "The visibility of the repository"
   type        = map(any)
   default = {
-    "tfroot-directory_services" = "public"
+    "tfroot-directory_services"  = "public"
+    "tfroot-edge_services"       = "public"
+    "tfroot-file_services"       = "public"
+    "tfroot-management_services" = "public"
   }
 }
 
