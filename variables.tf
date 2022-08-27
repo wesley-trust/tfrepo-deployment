@@ -33,6 +33,14 @@ variable "repository_visibility" {
   }
 }
 
+variable "repository_topics" {
+  description = "The topics of the repository"
+  type        = map(any)
+  default = {
+    "root" = ["azure", "terraform", "terratest", "azuredevops"]
+  }
+}
+
 variable "repository_template_owner" {
   description = "The licence template owner"
   type        = string

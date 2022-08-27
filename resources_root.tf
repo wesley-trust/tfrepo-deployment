@@ -6,6 +6,7 @@ resource "github_repository" "root" {
 
   visibility       = var.repository_visibility[each.value]
   license_template = var.license_template
+  topics           = var.repository_topics.root
 
   delete_branch_on_merge = true
   vulnerability_alerts   = true

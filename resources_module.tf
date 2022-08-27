@@ -6,10 +6,10 @@
 
   visibility       = var.repository_visibility[each.value]
   license_template = var.license_template
+  topics           = var.repository_topics.module
 
   delete_branch_on_merge = true
   vulnerability_alerts   = true
-  is_template            = true
 
   template {
     owner      = var.repository_template_owner
