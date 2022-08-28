@@ -92,7 +92,7 @@ variable "repository_topics" {
   }
 }
 
-variable "repository_template_owner" {
+variable "repository_owner" {
   description = "The licence template owner"
   type        = string
   default     = "wesley-trust"
@@ -118,4 +118,10 @@ variable "license_template" {
   description = "The licence template for the repo"
   type        = string
   default     = "mit"
+}
+
+variable "service_deployment" {
+  description = "The service deployment to create a unique repo name for testing"
+  type        = string
+  default     = null
 }

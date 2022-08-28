@@ -1,7 +1,7 @@
 # Define resources
 resource "github_repository" "submodule" {
   for_each    = toset(var.resource_repository.submodule)
-  name        = each.value
+  name        = "${each.value}${local.service_deployment}"
   description = var.repository_description[each.value]
 
   visibility       = var.repository_visibility[each.value]
@@ -12,7 +12,7 @@ resource "github_repository" "submodule" {
   vulnerability_alerts   = true
 
   template {
-    owner      = var.repository_template_owner
+    owner      = var.repository_owner
     repository = var.repository_template.submodule
   }
 }

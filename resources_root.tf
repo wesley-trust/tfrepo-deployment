@@ -1,7 +1,7 @@
 # Define resources
 resource "github_repository" "root" {
   for_each    = toset(var.resource_repository.root)
-  name        = each.value
+  name        = "${each.value}${local.service_deployment}"
   description = var.repository_description[each.value]
 
   visibility       = var.repository_visibility[each.value]
@@ -13,7 +13,7 @@ resource "github_repository" "root" {
   is_template            = true
 
   template {
-    owner      = var.repository_template_owner
+    owner      = var.repository_owner
     repository = var.repository_template.root
   }
 }
