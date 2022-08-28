@@ -92,7 +92,7 @@ variable "repository_topics" {
   }
 }
 
-variable "repository_template_owner" {
+variable "repository_owner" {
   description = "The licence template owner"
   type        = string
   default     = "wesley-trust"

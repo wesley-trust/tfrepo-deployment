@@ -13,7 +13,7 @@ resource "github_repository" "root" {
   is_template            = true
 
   template {
-    owner      = var.repository_template_owner
+    owner      = var.repository_owner
     repository = var.repository_template.root
   }
 }

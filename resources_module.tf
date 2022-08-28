@@ -12,7 +12,7 @@ resource "github_repository" "module" {
   vulnerability_alerts   = true
 
   template {
-    owner      = var.repository_template_owner
+    owner      = var.repository_owner
     repository = var.repository_template.module
   }
 }
