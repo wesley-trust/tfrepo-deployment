@@ -8,6 +8,7 @@ resource "github_repository" "module" {
   license_template = var.license_template
   topics           = var.repository_topics.module
 
+  allow_auto_merge       = true
   delete_branch_on_merge = true
   vulnerability_alerts   = true
 
