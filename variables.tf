@@ -119,3 +119,9 @@ variable "license_template" {
   type        = string
   default     = "mit"
 }
+
+variable "service_deployment" {
+  description = "The service deployment to create a unique repo name for testing"
+  type        = string
+  default     = null
+}
