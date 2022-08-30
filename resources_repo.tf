@@ -6,7 +6,7 @@ resource "github_repository" "repo" {
 
   visibility       = var.repository_visibility[each.value]
   license_template = var.license_template
-  topics           = var.repository_topics.repo
+  topics           = var.repository_topics.repo != null ? var.repository_topics.repo : null
 
   allow_auto_merge       = true
   delete_branch_on_merge = true

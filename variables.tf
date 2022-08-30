@@ -91,7 +91,7 @@ variable "repository_topics" {
   description = "The topics of the repository"
   type        = map(any)
   default = {
-    "repo"         = [""]
+    "repo"         = []
     "tf-root"      = ["azure", "terraform", "terratest", "azure-devops"]
     "tf-module"    = ["azure", "terraform", "terratest", "azure-devops", "terraform-module"]
     "tf-submodule" = ["azure", "terraform", "terratest", "azure-devops", "terraform-module"]
