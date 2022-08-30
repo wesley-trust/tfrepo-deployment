@@ -11,7 +11,7 @@ resource "github_repository" "repo" {
   allow_auto_merge       = true
   delete_branch_on_merge = true
   vulnerability_alerts   = true
-  is_template            = true
+  is_template            = false
 
   auto_init = true
 }
