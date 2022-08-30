@@ -1,12 +1,12 @@
 # Define resources
 resource "github_repository" "repo" {
-  for_each    = toset(var.resource_repository.repo)
-  name        = "${each.value}${local.service_deployment}"
-  description = var.repository_description[each.value]
-
-  visibility       = var.repository_visibility[each.value]
+  for_each         = toset(var.resource_repository.repo)
+  name             = "${each.value}${local.service_deployment}"
   license_template = var.license_template
-  topics           = var.repository_topics.repo != null ? var.repository_topics.repo : null
+
+  visibility  = var.repository_visibility[each.value] != null ? var.repository_visibility[each.value] : "private"
+  description = var.repository_description[each.value] != null ? var.repository_description[each.value] : null
+  topics      = var.repository_topics.repo != null ? var.repository_topics.repo : null
 
   allow_auto_merge       = true
   delete_branch_on_merge = true
