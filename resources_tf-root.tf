@@ -1,12 +1,12 @@
 # Define resources
-resource "github_repository" "root" {
-  for_each    = toset(var.resource_repository.root)
+resource "github_repository" "tf-root" {
+  for_each    = toset(var.resource_repository.tf-root)
   name        = "${each.value}${local.service_deployment}"
   description = var.repository_description[each.value]
 
   visibility       = var.repository_visibility[each.value]
   license_template = var.license_template
-  topics           = var.repository_topics.root
+  topics           = var.repository_topics.tf-root
 
   allow_auto_merge       = true
   delete_branch_on_merge = true
@@ -15,13 +15,13 @@ resource "github_repository" "root" {
 
   template {
     owner      = var.repository_owner
-    repository = var.repository_template.root
+    repository = var.repository_template.tf-root
   }
 }
 
-resource "github_branch_protection" "root" {
-  for_each      = toset(var.resource_repository.root)
-  repository_id = github_repository.root[each.value].node_id
+resource "github_branch_protection" "tf-root" {
+  for_each      = toset(var.resource_repository.tf-root)
+  repository_id = github_repository.tf-root[each.value].node_id
 
   pattern = var.repository_branch_protection
 

@@ -1,12 +1,12 @@
 # Define resources
-resource "github_repository" "module" {
-  for_each    = toset(var.resource_repository.module)
+resource "github_repository" "tf-submodule" {
+  for_each    = toset(var.resource_repository.tf-submodule)
   name        = "${each.value}${local.service_deployment}"
   description = var.repository_description[each.value]
 
   visibility       = var.repository_visibility[each.value]
   license_template = var.license_template
-  topics           = var.repository_topics.module
+  topics           = var.repository_topics.tf-submodule
 
   allow_auto_merge       = true
   delete_branch_on_merge = true
@@ -14,13 +14,13 @@ resource "github_repository" "module" {
 
   template {
     owner      = var.repository_owner
-    repository = var.repository_template.module
+    repository = var.repository_template.tf-submodule
   }
 }
 
-resource "github_branch_protection" "module" {
-  for_each      = toset(var.resource_repository.module)
-  repository_id = github_repository.module[each.value].node_id
+resource "github_branch_protection" "tf-submodule" {
+  for_each      = toset(var.resource_repository.tf-submodule)
+  repository_id = github_repository.tf-submodule[each.value].node_id
 
   pattern = var.repository_branch_protection
 

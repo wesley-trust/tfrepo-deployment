@@ -3,7 +3,10 @@ variable "resource_repository" {
   description = "The repositories to deploy"
   type        = map(any)
   default = {
-    root = [
+    repo = [
+      "packer-testing",
+    ]
+    tf-root = [
       "tfroot-directory_services",
       "tfroot-edge_services",
       "tfroot-file_services",
@@ -11,7 +14,7 @@ variable "resource_repository" {
       "tfpipeline-deployment",
     ]
 
-    module = [
+    tf-module = [
       "tfmodule-resource_group",
       "tfmodule-compute",
       "tfmodule-network_peering",
@@ -21,7 +24,7 @@ variable "resource_repository" {
       "tfmodule-traffic_manager"
     ]
 
-    submodule = [
+    tf-submodule = [
       "tfsubmodule-network",
       "tfsubmodule-disks",
       "tfsubmodule-key_vault",
@@ -36,6 +39,7 @@ variable "repository_description" {
   description = "The repository description"
   type        = map(any)
   default = {
+    "packer-testing"                   = "Testing packer"
     "tfroot-directory_services"        = "Terraform root configuration for deploying Directory Services to Azure, using modules, with Terratest Unit/Integration testing via Go, Regula (OPA) Policy as Code scanning in an Azure DevOps Pipeline"
     "tfroot-edge_services"             = "Terraform root configuration for deploying Edge Services to Azure, using modules, with Terratest Unit/Integration testing via Go, Regula (OPA) Policy as Code scanning in an Azure DevOps Pipeline"
     "tfroot-file_services"             = "Terraform root configuration for deploying File Services to Azure, using modules, with Terratest Unit/Integration testing via Go, Regula (OPA) Policy as Code scanning in an Azure DevOps Pipeline"
@@ -61,6 +65,7 @@ variable "repository_visibility" {
   description = "The visibility of the repository"
   type        = map(any)
   default = {
+    "packer-testing"                   = "public"
     "tfroot-directory_services"        = "public"
     "tfroot-edge_services"             = "public"
     "tfroot-file_services"             = "public"
@@ -86,9 +91,10 @@ variable "repository_topics" {
   description = "The topics of the repository"
   type        = map(any)
   default = {
-    "root"      = ["azure", "terraform", "terratest", "azure-devops"]
-    "module"    = ["azure", "terraform", "terratest", "azure-devops", "terraform-module"]
-    "submodule" = ["azure", "terraform", "terratest", "azure-devops", "terraform-module"]
+    "repo"         = [""]
+    "tf-root"      = ["azure", "terraform", "terratest", "azure-devops"]
+    "tf-module"    = ["azure", "terraform", "terratest", "azure-devops", "terraform-module"]
+    "tf-submodule" = ["azure", "terraform", "terratest", "azure-devops", "terraform-module"]
   }
 }
 
@@ -108,9 +114,9 @@ variable "repository_template" {
   description = "The template for the repository"
   type        = map(any)
   default = {
-    root      = "tfroot-template"
-    module    = "tfmodule-template"
-    submodule = "tfmodule-template"
+    tf-root      = "tfroot-template"
+    tf-module    = "tfmodule-template"
+    tf-submodule = "tfmodule-template"
   }
 }
 

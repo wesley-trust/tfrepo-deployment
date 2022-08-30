@@ -5,8 +5,26 @@ terraform {
 
 # Main reference of all historical resource moves
 moved {
-
-  # Rename of repository
-  from = github_repository.root["tfrepo-test"]
-  to   = github_repository.root["tfroot-test"]
+  from = github_repository.root
+  to   = github_repository.tf-root
+}
+moved {
+  from = github_repository.module
+  to   = github_repository.tf-module
+}
+moved {
+  from = github_repository.submodule
+  to   = github_repository.tf-submodule
+}
+moved {
+  from = github_branch_protection.root
+  to   = github_branch_protection.tf-root
+}
+moved {
+  from = github_branch_protection.module
+  to   = github_branch_protection.tf-module
+}
+moved {
+  from = github_branch_protection.submodule
+  to   = github_branch_protection.tf-submodule
 }
