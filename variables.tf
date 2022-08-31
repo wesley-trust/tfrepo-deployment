@@ -4,7 +4,7 @@ variable "resource_repository" {
   type        = map(any)
   default = {
     repo = [
-      "packer-testing",
+      "pkr-directory_services",
     ]
     tf-root = [
       "tfroot-directory_services",
@@ -39,7 +39,7 @@ variable "repository_description" {
   description = "The repository description"
   type        = map(any)
   default = {
-    "packer-testing"                   = "Testing packer"
+    "pkr-directory_services"           = "Testing packer"
     "tfroot-directory_services"        = "Terraform root configuration for deploying Directory Services to Azure, using modules, with Terratest Unit/Integration testing via Go, Regula (OPA) Policy as Code scanning in an Azure DevOps Pipeline"
     "tfroot-edge_services"             = "Terraform root configuration for deploying Edge Services to Azure, using modules, with Terratest Unit/Integration testing via Go, Regula (OPA) Policy as Code scanning in an Azure DevOps Pipeline"
     "tfroot-file_services"             = "Terraform root configuration for deploying File Services to Azure, using modules, with Terratest Unit/Integration testing via Go, Regula (OPA) Policy as Code scanning in an Azure DevOps Pipeline"
@@ -65,7 +65,7 @@ variable "repository_visibility" {
   description = "The visibility of the repository"
   type        = map(any)
   default = {
-    "packer-testing"                   = "public"
+    "pkr-directory_services"           = "public"
     "tfroot-directory_services"        = "public"
     "tfroot-edge_services"             = "public"
     "tfroot-file_services"             = "public"
