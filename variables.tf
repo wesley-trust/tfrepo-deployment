@@ -39,7 +39,7 @@ variable "repository_description" {
   description = "The repository description"
   type        = map(any)
   default = {
-    "pkr-directory_services"           = "Testing packer"
+    "pkr-directory_services"           = "Packer template for deploying Windows Features for Directory Services in a deployment image to Azure, with Terratest Unit/Integration testing via Go, Regula (OPA) Policy as Code scanning in an Azure DevOps Pipeline"
     "tfroot-directory_services"        = "Terraform root configuration for deploying Directory Services to Azure, using modules, with Terratest Unit/Integration testing via Go, Regula (OPA) Policy as Code scanning in an Azure DevOps Pipeline"
     "tfroot-edge_services"             = "Terraform root configuration for deploying Edge Services to Azure, using modules, with Terratest Unit/Integration testing via Go, Regula (OPA) Policy as Code scanning in an Azure DevOps Pipeline"
     "tfroot-file_services"             = "Terraform root configuration for deploying File Services to Azure, using modules, with Terratest Unit/Integration testing via Go, Regula (OPA) Policy as Code scanning in an Azure DevOps Pipeline"
