@@ -12,6 +12,7 @@ variable "resource_repository" {
       "tfroot-file_services",
       "tfroot-management_services",
       "tfpipeline-deployment",
+      "tfpipeline-agent_services",
     ]
 
     tf-module = [
@@ -46,6 +47,7 @@ variable "repository_description" {
     "tfroot-file_services"                  = "Terraform root configuration for deploying File Services to Azure, using modules, with Terratest Unit/Integration testing via Go, Regula (OPA) Policy as Code scanning in an Azure DevOps Pipeline"
     "tfroot-management_services"            = "Terraform root configuration for deploying Management Services to Azure, using modules, with Terratest Unit/Integration testing via Go, Regula (OPA) Policy as Code scanning in an Azure DevOps Pipeline"
     "tfpipeline-deployment"                 = "Terraform root configuration for deploying Pipelines to Azure DevOps, with Terratest Unit/Integration testing via Go and Regula (OPA) Policy as Code scanning in an Azure DevOps Pipeline"
+    "tfpipeline-agent_services"             = "Terraform root configuration for deploying Agents to Azure DevOps, with Terratest Unit/Integration testing via Go and Regula (OPA) Policy as Code scanning in an Azure DevOps Pipeline"
     "tfmodule-resource_group"               = "Terraform module for deploying Resource Groups to Azure, with Terratest Unit/Integration testing via Go, and Regula (OPA) Policy as Code scanning in an Azure DevOps Pipeline"
     "tfmodule-compute"                      = "Terraform module for deploying VMs to Azure, with features enabled via submodules, Terratest Unit/Integration testing via Go, and Regula (OPA) Policy as Code scanning in an Azure DevOps Pipeline"
     "tfmodule-network_peering"              = "Terraform module for deploying network peering (Local/Global) in Azure, with Terratest Unit/Integration testing via Go, and Regula (OPA) Policy as Code scanning in an Azure DevOps Pipeline"
@@ -73,6 +75,7 @@ variable "repository_visibility" {
     "tfroot-file_services"                  = "public"
     "tfroot-management_services"            = "public"
     "tfpipeline-deployment"                 = "public"
+    "tfpipeline-agent_services"             = "public"
     "tfmodule-resource_group"               = "public"
     "tfmodule-compute"                      = "public"
     "tfmodule-network_peering"              = "public"
