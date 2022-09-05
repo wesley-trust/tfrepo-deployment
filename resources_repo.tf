@@ -22,7 +22,7 @@ resource "github_branch_protection" "repo" {
 
   pattern = var.repository_branch_protection
 
-  enforce_admins      = true
+  enforce_admins      = false
   allows_deletions    = false
   allows_force_pushes = false
 
