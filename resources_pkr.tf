@@ -13,7 +13,10 @@ resource "github_repository" "pkr" {
   vulnerability_alerts   = true
   is_template            = true
 
-  auto_init = true
+  template {
+    owner      = var.repository_owner
+    repository = var.repository_template.tf-root
+  }
 }
 
 resource "github_branch_protection" "pkr" {
