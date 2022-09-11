@@ -4,6 +4,9 @@ variable "resource_repository" {
   type        = map(any)
   default = {
     repo = [
+
+    ]
+    pkr = [
       "pkr-directory_services",
       "pkr-agent_services",
       "pkr-template",
@@ -104,6 +107,7 @@ variable "repository_topics" {
   type        = map(any)
   default = {
     "repo"         = []
+    "pkr"          = ["azure", "packer", "terraform", "terratest", "azure-devops"]
     "tf-root"      = ["azure", "terraform", "terratest", "azure-devops"]
     "tf-module"    = ["azure", "terraform", "terratest", "azure-devops", "terraform-module"]
     "tf-submodule" = ["azure", "terraform", "terratest", "azure-devops", "terraform-module"]
@@ -126,6 +130,7 @@ variable "repository_template" {
   description = "The template for the repository"
   type        = map(any)
   default = {
+    pkr          = "pkr-template"
     tf-root      = "tfroot-template"
     tf-module    = "tfmodule-template"
     tf-submodule = "tfmodule-template"
