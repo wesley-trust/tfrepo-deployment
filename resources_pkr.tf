@@ -15,7 +15,7 @@ resource "github_repository" "pkr" {
 
   template {
     owner      = var.repository_owner
-    repository = var.repository_template.tf-root
+    repository = var.repository_template.pkr
   }
 }
 
