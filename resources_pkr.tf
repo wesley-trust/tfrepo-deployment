@@ -18,7 +18,7 @@ resource "github_repository" "pkr" {
 
 resource "github_branch_protection" "pkr" {
   for_each      = toset(var.resource_repository.repo)
-  repository_id = github_repository.repo[each.value].node_id
+  repository_id = github_repository.pkr[each.value].node_id
 
   pattern = var.repository_branch_protection
 
