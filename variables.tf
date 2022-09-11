@@ -5,6 +5,7 @@ variable "resource_repository" {
   default = {
     repo = [
       "pkr-directory_services",
+      "pkr-template",
     ]
     tf-root = [
       "tfroot-directory_services",
@@ -42,6 +43,7 @@ variable "repository_description" {
   type        = map(any)
   default = {
     "pkr-directory_services"                = "Packer template for deploying Windows Features for Directory Services in a deployment image to Azure, with Terratest Unit/Integration testing via Go, Regula (OPA) Policy as Code scanning in an Azure DevOps Pipeline"
+    "pkr-template"                          = "Packer template with Terratest Unit/Integration testing via Go, Regula (OPA) Policy as Code scanning in an Azure DevOps Pipeline"
     "tfroot-directory_services"             = "Terraform root configuration for deploying Directory Services to Azure, using modules, with Terratest Unit/Integration testing via Go, Regula (OPA) Policy as Code scanning in an Azure DevOps Pipeline"
     "tfroot-edge_services"                  = "Terraform root configuration for deploying Edge Services to Azure, using modules, with Terratest Unit/Integration testing via Go, Regula (OPA) Policy as Code scanning in an Azure DevOps Pipeline"
     "tfroot-file_services"                  = "Terraform root configuration for deploying File Services to Azure, using modules, with Terratest Unit/Integration testing via Go, Regula (OPA) Policy as Code scanning in an Azure DevOps Pipeline"
@@ -70,6 +72,7 @@ variable "repository_visibility" {
   type        = map(any)
   default = {
     "pkr-directory_services"                = "public"
+    "pkr-template"                          = "public"
     "tfroot-directory_services"             = "public"
     "tfroot-edge_services"                  = "public"
     "tfroot-file_services"                  = "public"
