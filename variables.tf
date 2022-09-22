@@ -18,6 +18,7 @@ variable "resource_repository" {
       "tfroot-management_services",
       "tfpipeline-deployment",
       "tfpipeline-agent_services",
+      "tfroot-image-gallery_services",
     ]
 
     tf-module = [
@@ -53,6 +54,7 @@ variable "repository_description" {
     "tfroot-edge_services"                  = "Terraform root configuration for deploying Edge Services to Azure, using modules, with Terratest Unit/Integration testing via Go, Regula (OPA) Policy as Code scanning in an Azure DevOps Pipeline"
     "tfroot-file_services"                  = "Terraform root configuration for deploying File Services to Azure, using modules, with Terratest Unit/Integration testing via Go, Regula (OPA) Policy as Code scanning in an Azure DevOps Pipeline"
     "tfroot-management_services"            = "Terraform root configuration for deploying Management Services to Azure, using modules, with Terratest Unit/Integration testing via Go, Regula (OPA) Policy as Code scanning in an Azure DevOps Pipeline"
+    "tfroot-image-gallery_services"         = "Terraform root configuration for deploying Image Gallery Services to Azure, with Terratest Unit/Integration testing via Go, Regula (OPA) Policy as Code scanning in an Azure DevOps Pipeline"
     "tfpipeline-deployment"                 = "Terraform root configuration for deploying Pipelines to Azure DevOps, with Terratest Unit/Integration testing via Go and Regula (OPA) Policy as Code scanning in an Azure DevOps Pipeline"
     "tfpipeline-agent_services"             = "Terraform root configuration for deploying Agents to Azure DevOps, with Terratest Unit/Integration testing via Go and Regula (OPA) Policy as Code scanning in an Azure DevOps Pipeline"
     "tfmodule-resource_group"               = "Terraform module for deploying Resource Groups to Azure, with Terratest Unit/Integration testing via Go, and Regula (OPA) Policy as Code scanning in an Azure DevOps Pipeline"
@@ -83,6 +85,7 @@ variable "repository_visibility" {
     "tfroot-edge_services"                  = "public"
     "tfroot-file_services"                  = "public"
     "tfroot-management_services"            = "public"
+    "tfroot-image-gallery_services"         = "public"
     "tfpipeline-deployment"                 = "public"
     "tfpipeline-agent_services"             = "public"
     "tfmodule-resource_group"               = "public"
