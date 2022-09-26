@@ -1,4 +1,4 @@
-/* # Define resources
+# Define resources
 resource "github_repository" "repo" {
   for_each         = toset(var.resource_repository.repo)
   name             = "${each.value}${local.service_deployment}"
@@ -35,4 +35,3 @@ resource "github_branch_protection" "repo" {
     required_approving_review_count = 0
   }
 }
- */

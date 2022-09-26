@@ -4,7 +4,7 @@ variable "resource_repository" {
   type        = map(any)
   default = {
     repo = [
-
+      "bicepmodule-resource_group"
     ]
     pkr = [
       "pkr-directory_services",
@@ -71,6 +71,7 @@ variable "repository_description" {
     "tfsubmodule-public_load_balancer"      = "Terraform submodule for deploying public load balancers to Azure, with Terratest Unit/Integration testing via Go, and Regula (OPA) Policy as Code scanning in an Azure DevOps Pipeline"
     "tfsubmodule-virtual_machine"           = "Terraform submodule for deploying Linux or Windows VMs to Azure, with Terratest Unit/Integration testing via Go, and Regula (OPA) Policy as Code scanning in an Azure DevOps Pipeline"
     "tfsubmodule-virtual_machine_scale_set" = "Terraform submodule for deploying Linux or Windows VM scale sets to Azure, with Terratest Unit/Integration testing via Go, and Regula (OPA) Policy as Code scanning in an Azure DevOps Pipeline"
+    "bicepmodule-resource_group"            = "Bicep module for deploying Resource Groups to Azure"
   }
 }
 
@@ -102,6 +103,7 @@ variable "repository_visibility" {
     "tfsubmodule-public_load_balancer"      = "public"
     "tfsubmodule-virtual_machine"           = "public"
     "tfsubmodule-virtual_machine_scale_set" = "public"
+    "bicepmodule-resource_group"            = "public"
   }
 }
 
