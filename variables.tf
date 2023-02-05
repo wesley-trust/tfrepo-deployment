@@ -74,7 +74,7 @@ variable "repository_description" {
     "tfsubmodule-virtual_machine"           = "Terraform submodule for deploying Linux or Windows VMs to Azure, with Terratest Unit/Integration testing via Go, and Regula (OPA) Policy as Code scanning in an Azure DevOps Pipeline"
     "tfsubmodule-virtual_machine_scale_set" = "Terraform submodule for deploying Linux or Windows VM scale sets to Azure, with Terratest Unit/Integration testing via Go, and Regula (OPA) Policy as Code scanning in an Azure DevOps Pipeline"
     "bicepmodule-resource_group"            = "Bicep module for deploying Resource Groups to Azure"
-    "bicepmodule-resource_group"            = "Bicep module for deploying Compute Gallery to Azure"
+    "bicepmodule-compute_gallery"           = "Bicep module for deploying Compute Gallery to Azure"
     "bicep-image-gallery_services"          = "Bicep configuration for deploying Image Gallery Services to Azure"
   }
 }
@@ -108,7 +108,7 @@ variable "repository_visibility" {
     "tfsubmodule-virtual_machine"           = "public"
     "tfsubmodule-virtual_machine_scale_set" = "public"
     "bicepmodule-resource_group"            = "public"
-    "bicepmodule-compute_gallery"            = "public"
+    "bicepmodule-compute_gallery"           = "public"
     "bicep-image-gallery_services"          = "public"
   }
 }
